@@ -23,6 +23,7 @@ def upgrade():
     sa.Column('user_id', sa.Integer(), nullable=False),
     sa.Column('rank', sa.Integer(), nullable=True),
     sa.Column('ticket_count', sa.Integer(), nullable=True),
+    sa.Column('ticket_codes', sa.String(), nullable=True),
     sa.ForeignKeyConstraint(['proposal_id'], ['proposal.id'], name=op.f('fk_event_ticket_proposal_id_proposal')),
     sa.ForeignKeyConstraint(['user_id'], ['user.id'], name=op.f('fk_event_ticket_user_id_user')),
     sa.PrimaryKeyConstraint('id', name=op.f('pk_event_ticket'))
